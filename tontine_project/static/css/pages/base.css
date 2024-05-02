@@ -1,0 +1,512 @@
+:root {
+    --d: 700ms;
+    --e: cubic-bezier(0.19, 1, 0.22, 1);
+    --font-sans: "Rubik", sans-serif;
+    --font-serif: "Cardo", serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to left,#fff 80%, #c3f5ff 20%);
+}
+
+.navsection{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(to top,#fff 80%, #c3f5ff 20%);
+}
+
+.logo{
+    width: 30%;
+    color: #fff;
+    background-image: linear-gradient(#8d98e3 40%, #854fee 60%);
+    padding-left: 100px;
+    box-sizing: border-box;
+}
+
+.logo h1 {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    animation: aagepiche 2s linear infinite;
+    animation-direction: alternate;
+    color: #fff;
+}
+
+.logo a{
+    text-decoration: none;
+}
+
+@keyframes aagepiche {
+    from{ padding-left: 40px; }
+    top { padding-right: 40px; } 
+}
+
+nav{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    font-size: 17px;
+    position: relative;
+}
+
+nav a:first-child{
+    color: #4458dc;
+}
+
+nav a:before{
+    content: "";
+    position: absolute;
+    top: 110;
+    left: 0;
+    width: 0;
+    height: 22px;
+    border-bottom: 2px solid #4458dc;
+    transition: all 0.4s linear;
+}
+
+nav a:hover::before{
+    width: 100%;
+}
+
+/*-------------============ Fin Nav Bar ==========----------------*/
+
+.main{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.rightsite{
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background-color: #9ae7f8;
+}
+
+.rightsite img{
+    max-width: 500px;
+    height: auto;
+    border-radius: 100% 100% 100% 100% / 100% 100% 100% 100%;
+}
+
+.leftsite{
+    color: #000;
+    text-transform: uppercase;
+    margin-right: 15%;
+}
+
+.leftsite h3{
+    font-size: 26px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.leftsite h3::after{
+    content: "";
+    width: 450px;
+    height: 3px;
+    position: absolute;
+    top: 43%;
+    left: 29.4%;
+    background: #000;
+}
+
+.leftsite h1{
+    margin-top: 20px;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.leftsite h2{
+    margin-bottom: 35px;
+    font-weight: 100;
+    word-spacing: 4px;
+}
+
+.leftsite .btn1 , .btn2{
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 14px;
+    text-align: center;
+    padding: 12px 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.leftsite .btn1{
+    display: inline-block;
+    margin-right: 50px;
+    color: #fff;
+    letter-spacing: 0;
+    background-image: linear-gradient(to right,#4458dc 0%, #854fee 100%);
+    border: double 2px transparent;
+    box-shadow: 0 10px 30px rgba(118, 85, 225,.3);
+}
+
+.leftsite .btn2{
+    border: 2px solid #4458dc;
+    color: #222;
+    background-color: #fff;
+    box-shadow: none;
+}
+
+.leftsite .btn1:hover{
+    border: 2px solid #4458dc;
+    color: #222;
+    background-color: #fff;
+    box-shadow: none;
+    background-image: none;
+}
+
+/*-------------============ Fin Section Main ==========----------------*/
+.cr{
+    display: grid;
+    place-items: center;
+    width: 80rem;
+    height: 70rem;
+    margin-bottom: 70px;
+}
+.page-content {
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    grid-gap: 1rem;
+    margin-bottom: 70px;
+    border-spacing: 30px;
+    padding: 1px;
+    max-width: 980px;
+    margin: 0 auto;
+    font-family: var(--font-sans);
+}
+  
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    color: whitesmoke;
+    background-color: whitesmoke;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
+      0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
+      0 16px 16px rgba(0, 0, 0, 0.1);
+}
+  @media (min-width: 600px) {
+    .card {
+      height: 350px;
+    }
+}
+.card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-size: cover;
+    background-position: 0 0;
+    transition: transform calc(var(--d) * 1.5) var(--e);
+    pointer-events: none;
+}
+.card:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: transform calc(var(--d) * 2) var(--e);
+}
+.card:nth-child(1):before {
+    background-image: url(https://pakistantradeportal.gov.pk/storage/product_images/62b2de69a6cd11655889513.jpg);
+}
+.card:nth-child(2):before {
+    background-image: url(https://img.freepik.com/photos-gratuite/pot-pieces-or-pieces-or-dessus_1340-28895.jpg?t=st=1713901303~exp=1713904903~hmac=a1642ea771822eadc7d538dd82782a92f2d653c8106825483b1e4941cc09f039&w=740);
+}
+.card:nth-child(3):before {
+    background-image: url(https://img.freepik.com/vecteurs-libre/illustration-monnaie-dessin-anime-dessinee-main_23-2150985626.jpg?t=st=1713901603~exp=1713905203~hmac=da68e9ddf3169d7ef13aa32ccfb7c9681d5ea3e7dba9b6c45294f610d311f05c&w=740);
+}
+.card:nth-child(4):before {
+    background-image: url(https://img.freepik.com/photos-gratuite/bocal-verre-pieces-or-souris-dessus_1340-28920.jpg?t=st=1713901375~exp=1713904975~hmac=dfba0dd02b21a5a56b7565f4f051b64131341d0b2886c95b5d14b376a1ce7e7c&w=360);
+}
+.card:nth-child(5):before {
+    background-image: url(https://img.freepik.com/photos-gratuite/concept-argent-photorealiste_23-2151027570.jpg?t=st=1713901950~exp=1713905550~hmac=10125203bb4c81476c8de0ac9951635451990fddf0710966ebd58bebbd7909dd&w=360);
+}
+.card:nth-child(6):before {
+    background-image: url(https://img.freepik.com/vecteurs-libre/illustration-monnaie-dessin-anime-dessinee-main_52683-145049.jpg?t=st=1713900589~exp=1713904189~hmac=204234bb559c1dda6f7e06714ad46583c45acde3cddc502af392a0d547d5c1eb&w=740);
+}
+  
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    transition: transform var(--d) var(--e);
+    z-index: 1;
+}
+.content > * + * {
+    margin-top: 1rem;
+}
+  
+.title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #854fee;
+}
+  
+.copy {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-style: italic;
+    line-height: 1.35;
+    color: #854fee;
+}
+  
+.btn {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase;
+    color: #000;
+    background-image: linear-gradient(to right,#4458dc 0%, #854fee 100%);
+    border: double 2px transparent;
+    box-shadow: 0 10px 30px rgba(118, 85, 225,.3);
+}
+.btn:hover {
+    background-color: #0d0d0d;
+}
+.btn:focus {
+    outline: 1px dashed yellow;
+    outline-offset: 3px;
+}
+  
+.card:after {
+    transform: translateY(0);
+}
+  
+.content {
+    transform: translateY(calc(100% - 4.5rem));
+}
+.content > *:not(.title) {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+}
+  
+.card:hover {
+    align-items: center;
+}
+.card:hover:before {
+    transform: translateY(-4%);
+}
+.card:hover:after {
+    transform: translateY(-50%);
+}
+.card:hover .content {
+    transform: translateY(0);
+}
+.card:hover .content > *:not(.title) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--d) / 8);
+}
+
+
+/*-------------============ Fin Section CR ==========----------------*/
+#work{
+    display: flex;
+    flex-direction: column;
+    background-color: #9ae7f8;
+    color: white;
+    align-items: center;
+    padding: 20px;
+}
+
+#work h1{
+    color: #000;
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+.gallery img{
+    width: 340px;
+    height: 180px;
+    margin: 50px;
+}
+
+/*-------------============ Fin Section work ==========----------------*/
+.conte{
+    display: flex;
+    grid-gap: 50px;
+}
+
+.container {
+    width: 600px;
+    aspect-ratio: 16 / 9;
+    background: linen;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr 0fr 1fr;
+    place-items: center;
+    outline: 2px solid #4458dc;
+    border-radius: 5vmin;
+    overflow: hidden;
+    transition: 0.75s ease;
+}
+  
+.left1,
+.right1,
+.middle1 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transform-origin: center;
+    transition: 0.75s ease;
+}
+  
+.left1 {
+    background-image: url("https://img.freepik.com/vecteurs-libre/icones-finances-gestion-argent-icones-affaires-signes-argent_1150-64341.jpg?t=st=1713900272~exp=1713903872~hmac=2b69354696fade97a90094c46a1bceb23b4f9b9d240e9bbf5d2795d72c80d842&w=740");
+    border-right: 1px solid #4458dc;
+}
+  
+.middle1 {
+    font-size: 0rem;
+    background-image: url("https://pakistantradeportal.gov.pk/storage/product_images/62b2de69a6cd11655889513.jpg");
+}
+  
+.right1 {
+    background-image: url("https://img.freepik.com/vecteurs-libre/illustration-monnaie-dessin-anime-dessinee-main_52683-145049.jpg?t=st=1713900589~exp=1713904189~hmac=204234bb559c1dda6f7e06714ad46583c45acde3cddc502af392a0d547d5c1eb&w=740");
+    border-left: 1px solid #4458dc;
+}
+
+.left2,
+.right2,
+.middle2 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transform-origin: center;
+    transition: 0.75s ease;
+}
+.left2 {
+    background-image: url("https://img.freepik.com/photos-gratuite/pot-pesos-mexicains_23-2149540084.jpg?t=st=1713902750~exp=1713906350~hmac=d0d55638c3384944d8b46d51608272607b47e1b16e867590990a7263c881f736&w=360");
+    border-right: 1px solid #4458dc;
+}
+  
+.middle2 {
+    font-size: 0rem;
+    background-image: url("https://img.freepik.com/photos-gratuite/pot-billets-roules-table-ordinateur-portable-papiers-femme-fond_1268-17480.jpg?t=st=1713902856~exp=1713906456~hmac=7c2201ed1cc9340eae0ea2e025917ca62c1e38bf311e55bd016e3fd807c89356&w=1060");
+}
+  
+.right2 {
+    background-image: url("https://img.freepik.com/photos-gratuite/gros-plan-objets-education-economie_23-2149113540.jpg?t=st=1713903060~exp=1713903660~hmac=68991ad67fda1bcd19d4e069e0a80d306084b97e17f577386ac5d04c777113ad");
+    border-left: 1px solid #4458dc;
+}
+  
+.container:hover {
+    grid-template-columns: 0fr 1fr 0fr;
+}
+
+
+/*-------------============ Fin Section CONTE ==========----------------*/
+.foot{
+    display: grid;
+    grid-template-rows: 1fr 10rem auto;
+    grid-template-areas: "main" "." "footer";
+    overflow-x: hidden;
+    max-width: 100rem;
+    min-height: 30vh;
+    margin-top: 100px;
+
+}
+.footer {
+    z-index: 1;
+    --footer-background: rgb(124, 219, 240);
+    display: grid;
+    position: relative;
+    grid-area: footer;
+    min-height: 12rem;
+  }
+.footer .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background: var(--footer-background);
+    filter: url("#blob");
+  }
+.footer .bubbles .bubble {
+    position: absolute;
+    left: var(--position, 50%);
+    background: var(--footer-background);
+    border-radius: 100%;
+    -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+            animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    transform: translate(-50%, 100%);
+  }
+.footer {
+    background: var(--footer-background);
+    z-index: 2;
+  }
+.footer .container {
+    max-width: 68px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    color: #fff;
+  }
+  
+  @keyframes bubble-size {
+    0%, 75% {
+      width: var(--size, 4rem);
+      height: var(--size, 4rem);
+    }
+    100% {
+      width: 0rem;
+      height: 0rem;
+    }
+  }
+  
+  @keyframes bubble-move {
+    0% {
+      bottom: -4rem;
+    }
+    100% {
+      bottom: var(--distance, 10rem);
+    }
+  }

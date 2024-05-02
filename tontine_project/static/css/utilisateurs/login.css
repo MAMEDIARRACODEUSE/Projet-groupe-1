@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+}
+
+.navsection{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(to top,#fff 80%, #c3f5ff 20%);
+}
+
+.logo{
+    width: 30%;
+    color: #fff;
+    background-image: linear-gradient(#8d98e3 40%, #854fee 60%);
+    padding-left: 100px;
+    box-sizing: border-box;
+}
+
+.logo h1 {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    animation: aagepiche 2s linear infinite;
+    animation-direction: alternate;
+    color: #fff;
+}
+
+.logo a{
+    text-decoration: none;
+}
+
+@keyframes aagepiche {
+    from{ padding-left: 40px; }
+    top { padding-right: 40px; } 
+}
+
+nav{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    font-size: 17px;
+    position: relative;
+}
+
+nav a:first-child{
+    color: #4458dc;
+}
+
+nav a:before{
+    content: "";
+    position: absolute;
+    top: 110;
+    left: 0;
+    width: 0;
+    height: 22px;
+    border-bottom: 2px solid #4458dc;
+    transition: all 0.4s linear;
+}
+
+nav a:hover::before{
+    width: 100%;
+}
+
+/*-------------============ Fin Nav Bar ==========----------------*/
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e8e8e8;
+}
+
+.main-login {
+    position: relative;
+    display: flex;
+    background-color: #240046;
+    max-width: 450px;
+    width: 400px;
+    height: 100rem;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: rgba(59, 0, 130, 0.442) 0px 30px 90px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 24px;
+}
+
+.login {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/*-------------============ Fin Login ==========----------------*/
+

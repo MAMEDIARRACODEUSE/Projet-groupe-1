@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gestion Tontine</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/contacts/contact_details.css' %}">
+</head>
+<style>
+  .card{
+    width: 250px;
+    margin: 0 auto;
+    padding: 70px;
+    border: 1px solid #9ae7f8;
+    border-radius: 50px;
+    background-color: #9ae7f8;
+  }
+</style>
+<body>
+  <!-- ========== Début Section Menu =========== -->
+  <header>
+    <section class="navsection">
+      <div class="logo">
+        <a href="{% url 'base' %}" ><h1>Gestion Tontine</h1></a>
+      </div>
+      <nav>
+        <a href="{% url 'base' %}" >Accieul</a>
+        <a href="{% url 'about' %}">A Propos</a>
+        <a href="{% url 'groupes' %}">Groupe Tontine</a>
+        <a href="{% url 'cotisation' %}">Cotisation</a>
+        <a href="{% url 'paiement' %}">Paiement</a>
+        <a href="{% url 'contacts' %}">Contact</a>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}">Deconnexion</a>
+        {% else %}
+        <a href="{% url 'login' %}">Connexion</a>
+        {% endif %}
+      </nav>
+    </section>
+  
+  <!-- ========== Fin Section Menu =========== -->
+
+  
+  <!-- ========== Début Section Main =========== -->
+  {% block contenu %}
+    <div class="card">
+        <h4 class="text-center"> {{contact.prenom}}  {{contact.nom}} </h4>
+        <ul class="list-group list-flush">
+            <li class="list-group-item">
+            Telephone : {{contact.telephone}}
+            </li>
+            <li class="list-group-item">
+                Email : {{contact.email|default_if_none:"Non renseigné"}}
+            </li>
+        </ul>
+    </div>
+  {% endblock %}
+  <!-- ========== Fin Section Main =========== -->
+</header>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="{% static 'js/base.js' %}"></script>
+</body> 
+</html> 
+
